@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inkline</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="navbar">Inkline</div>
+  <div class="container">
+    <h1>Welcome to Inkline</h1>
+    <p>Select a book to start reading!</p>
+
+    <div class="book-list">
+      <% books.forEach(book => { %>
+        <div class="book-card" onclick="location.href='/reader?book=<%= encodeURIComponent(book.title) %>'">
+          <h3><%= book.title %></h3>
+          <p><%= book.desc %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>

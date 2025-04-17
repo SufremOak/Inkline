@@ -1,0 +1,29 @@
+{
+  "name": "inkline",
+  "main": "index.mjs",
+  "scripts": {
+    "dev:build": "sass ./src/styles/index.scss build/styles.css && tsc -outDir build/scripts && cp public/index.html build/",
+    "dev:serve": "npm run dev:build && node ./index.mjs",
+    "dev:watch": "nodemon --watch src --watch public --watch build --exec 'npm run dev:build && nodemon ./index.mjs'"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "nodemon": "^3.1.9"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@types/node": "^22.14.1",
+    "ejs": "^3.1.10",
+    "epubjs": "^0.3.93",
+    "express": "^5.1.0",
+    "lit": "^3.3.0",
+    "pdfjs-dist": "^5.1.91",
+    "sass": "^1.86.3",
+    "ts-node": "^10.9.2"
+  },
+  "trustedDependencies": [
+    "@parcel/watcher"
+  ]
+}
